@@ -18,7 +18,8 @@
   }
   
   .contenedor-nav {
-    display: flex;    
+    display: flex;   
+   
     
   }
   
@@ -36,4 +37,10 @@
 
   .contenedor-nav li a:hover{
       text-decoration: underline;
+  }
+
+  .carrito{
+    width: 10%;
+    padding: auto;
+    
   }

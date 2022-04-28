@@ -1,5 +1,7 @@
-
+import React from 'react';
+import CartWidget from './CartWidget';
 import './estilos/NavBar.css';
+
 
 
 function NavBar() {
@@ -27,11 +29,13 @@ function NavBar() {
                     </li>
                     <li>
                         <a href="#">Contacto</a>
-                    </li>
+                    </li>                   
                 </ul>
-
+              
             </nav>
-
+            <div>
+            <CartWidget />
+           </div>
         </header>
 
 
