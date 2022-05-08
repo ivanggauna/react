@@ -35,7 +35,7 @@ function NavBar() {
             </nav>
             <div>
             <CartWidget />
-           </div>
+           </div>          
         </header>
 
 
