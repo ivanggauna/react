@@ -1,18 +1,17 @@
 import React from 'react';
-import ItemCount from '../ItemCount';
-import '../estilos/itemListContainer.css';
 
-const itemListContainer = ({ greetings = "Hola soy un saludo de prueba" }) => {
-    const onAdd = (cantidad) => {
-        alert(`Añadiste ${cantidad} productos a tu carrito`);
-    }
+import '../estilos/itemListContainer.css';
+import ItemList from '../ItemList';
+
+
+const itemListContainer = ({ greetings = "Hola soy un saludo de prueba" }) => {   
 
     return (
 
         <section className="">
             <div className="">
-                <h1 className='saludo'>{greetings}</h1>
-                <ItemCount onAdd={onAdd} />
+                <h1 className='saludo'>{greetings}</h1>                 
+                <ItemList/>
             </div>
 
 
