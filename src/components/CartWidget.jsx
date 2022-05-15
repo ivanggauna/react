@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './estilos/CartWidget.css';
 
 
@@ -6,9 +7,11 @@ import './estilos/CartWidget.css';
 const CartWidget = () => {
  
   return (
-    <div className="cartWidget">     
-      <a href=""> <img src="../src/iconocarrito.png" alt="" className='carrito' /></a>
+    <div className="cartWidget">   
+   <Link to ="/cart">      
       
+       <img src="../src/iconocarrito.png" alt="" className='carrito' />
+    </Link>
     </div>
   );
 };

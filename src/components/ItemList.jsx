@@ -10,8 +10,8 @@ const itemList = () => {
     return (
 
         <section className="">
-            <div className="">             
-                <ItemListContainer/>
+            <div className="">
+                <ItemListContainer />
             </div>
 
 
