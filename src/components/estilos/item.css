@@ -4,11 +4,15 @@
     justify-content: center;
     align-items: center;
     margin-bottom: 1em;
+    height: auto;
+    
+    
 }
 
 .product-card_image{
     width: auto;
-    height: 50%;
+    height: auto;
+    margin-top: 1em;
     border: 1px solid black;
     border-radius: 10px;
 }

@@ -6,9 +6,7 @@ import './estilos/itemCount.css'
 /* La funcion tiene que tener stock, initial,  onAdd  */
 const ItemCount = ({ initial, stock, onAdd }) => {
 
-    /* const initial = 1; /* Para que el contador siempre inicie en 1 */
-    /* const stock = 5; /* Stock maximo, limite de contador */
-
+   
     /* Hook */
     const [cantidad, setCantidad] = useState(initial)
 
