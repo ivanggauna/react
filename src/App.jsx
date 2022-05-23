@@ -3,10 +3,12 @@ import ItemDetailContainer from "./components/contenedor/ItemDetailContainer";
 import ItemListContainer from "./components/contenedor/ItemListContainer";
 import {BrowserRouter, Routes, Route, Navigate} from 'react-router-dom';
 import Cart from "./components/Cart";
+import CartContextProv from "./context/CartContext";
 
 function App(){
     return(
         <BrowserRouter> 
+        <CartContextProv>
         <div className="App">
             <NavBar/>
             <Routes>
@@ -17,6 +19,7 @@ function App(){
                 <Route path="/*" element ={<Navigate to ="/" replace/>}/>
             </Routes>
         </div>
+        </CartContextProv>
         </BrowserRouter>
     )
 }

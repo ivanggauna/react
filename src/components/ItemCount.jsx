@@ -4,7 +4,7 @@ import './estilos/itemCount.css'
 
 
 /* La funcion tiene que tener stock, initial,  onAdd  */
-const ItemCount = ({ initial, stock, onAdd }) => {
+const ItemCount = ({ initial, stock, onAdd, product, handleInputType }) => {
 
    
     /* Hook */
@@ -14,6 +14,11 @@ const ItemCount = ({ initial, stock, onAdd }) => {
     const añadirProducto = (valor) => {
         setCantidad(cantidad + valor);
     };
+
+    function addToCart() {
+        onAdd(cantidad, product.name);
+        handleInputType();
+    }
 
     return (
         <div className='itemCountContainer'>
@@ -31,7 +36,7 @@ const ItemCount = ({ initial, stock, onAdd }) => {
                 </button>
             </div>
 
-            <button className='botonAñadir' onClick={() => onAdd(cantidad)} disabled={stock === 0 ? true : false}>
+            <button className='botonAñadir' onClick={() => addToCart(cantidad)} disabled={stock === 0 ? true : false}>
                 Añadir
             </button>
 

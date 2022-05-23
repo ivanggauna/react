@@ -1,53 +1,33 @@
 import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams } from "react-router-dom";
 import '../estilos/ItemListContainer.css'
-import Item from '../Item';
 import { getFetch } from '../helpers/getFetch';
+import Loader from '../Loader';
+import ItemList from '../ItemList';
 
 
 
 
 const ItemListContainer = () => {
-    const [products, setProducts] = useState([]);
-    const { id } = useParams()
+    const [items,setItems] = useState([]);
+    const [loader,setLoader] = useState(true);
+    const {id} = useParams();
 
     useEffect(() => {
-        if (id) {
+        setTimeout(() => {
             getFetch()
-                .then(respuesta => setProducts(respuesta.filter((Item) => Item.categoria === id)))
-                .catch((err) => console.log(err))
-        } else {
-            getFetch()
-                .then(respuesta => setProducts(respuesta))
-                .catch((err) => console.log(err))
-
-        }
-
-    }, [id])
+            .then(data => setItems(data))
+            .catch(err => console.log(err))
+            .finally(() => setLoader(false))
+        }, 2000);
+    },[]);
 
 
     return (
         <div className="product-list-container">
-            {products.length ? (
-                <>
-                    {products.map((products) => {
-                        return (
-                            <div key={products.id}>
-                                <Item
-                                    name={products.name}
-                                    image={products.image}
-                                    price={products.price}
-                                    stock={products.stock}
-                                    id={products.id}
-                                    categoria={products.categoria}
-                                />
-                            </div>
-                        );
-                    })}
-                </>
-            ) : (
-                <p>Cargando productos...</p>
-            )}
+              {loader?
+                <Loader/>:
+        <ItemList items={items} id={id}></ItemList>}
         </div>
     );
 };
