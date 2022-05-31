@@ -2,10 +2,12 @@ import React from 'react';
 import CartWidget from './CartWidget';
 import { Link } from 'react-router-dom';
 import './estilos/NavBar.css';
+import { UseCartContext } from '../context/CartContext';
 
 
 
 function NavBar() {
+    const {totalQuantity} = UseCartContext()
 
     const logo = '../src/logoNew.webp';    
 
@@ -34,7 +36,9 @@ function NavBar() {
                 </ul>
               
             </nav>
-            <div>
+           
+            <div className='cartText'>
+            {totalQuantity() !== 0 && totalQuantity()}
             <CartWidget />
            </div>          
         </header>

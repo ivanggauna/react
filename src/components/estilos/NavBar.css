@@ -44,3 +44,10 @@
     padding: auto;
     
   }
+
+  .cartText{
+    color: white;
+    font-size: 2em;
+    text-align: start;
+    
+  }

@@ -18,7 +18,7 @@ const Item = (item) => {
 
       <span className="product-card_precio">$ {item.price}</span>
 
-      <ItemCount stock={item.stock} onAdd={onAdd} initial={1} />
+    
      
     </article>
   );

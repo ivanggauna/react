@@ -30,7 +30,7 @@ const ItemDetail = ({ product }) => {
                 {inputType === 'itemCount' ?
                     <ItemCount product={product} initial={1} stock={product.stock} onAdd={onAdd} handleInputType={handleInputType}/>:
                     <Buttons/>}           
-               
+              
             </div>
         </div>
        
