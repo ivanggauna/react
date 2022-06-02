@@ -8,11 +8,10 @@ import Loader from './Loader';
 
 
 
-const itemList = () => {
-    const [products, setProducts] = useState([]);
-    const { id } = useParams()
+const itemList = ({items}) => {
+ 
 
-    useEffect(() => {
+  /*   useEffect(() => {
         if (id) {
             getFetch()
                 .then(respuesta => setProducts(respuesta.filter((Item) => Item.categoria === id)))
@@ -24,16 +23,16 @@ const itemList = () => {
 
         }
 
-    }, [id])
+    }, [id]) */
 
     return (
 
         <section className="">
             <div className="">
             <div className="product-list-container">
-            {products.length ? (
+            {items.length ? (
                 <>
-                    {products.map((products) => {
+                    {items.map((products) => {
                         return (
                             <div key={products.id}>
                                 <Item
