@@ -8,22 +8,8 @@ import Loader from './Loader';
 
 
 
-const itemList = ({items}) => {
- 
+const itemList = ({items}) => { 
 
-  /*   useEffect(() => {
-        if (id) {
-            getFetch()
-                .then(respuesta => setProducts(respuesta.filter((Item) => Item.categoria === id)))
-                .catch((err) => console.log(err))
-        } else {
-            getFetch()
-                .then(respuesta => setProducts(respuesta))
-                .catch((err) => console.log(err))
-
-        }
-
-    }, [id]) */
 
     return (
 
