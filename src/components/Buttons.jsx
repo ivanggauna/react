@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import './estilos/Buttons.css'
+import './styles/Buttons.css'
 
 
 export default function Buttons() {

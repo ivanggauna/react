@@ -1,52 +1,52 @@
-import imagenes from "../../imagenes/imagenes";
+import images from "../../images/images";
 
-const productos = [{
+const products = [{
         id: "01",
         name: "RG God Gundam",
         price: 300,
-        image: imagenes.imagen3,
+        image: images.imagen3,
         stock: 2,
-        categoria: 'maquetas'
+        category: 'maquetas'
     },
     {
         id: "02",
         name: "MG Unicorn Extreme",
         price: 350,
-        image: imagenes.imagen1,
+        image: images.imagen1,
         stock: 4,
-        categoria: 'maquetas'
+        category: 'maquetas'
     },
     {
         id: "03",
         name: "PG MK II Titans",
         price: 400,
-        image: imagenes.imagen2,
+        image: images.imagen2,
         stock: 5,
-        categoria: 'maquetas'
+        category: 'maquetas'
     },
     {
         id: "04",
         name: "Vallejo Black",
         price: 300,
-        image: imagenes.imagen4,
+        image: images.imagen4,
         stock: 3,
-        categoria: 'pinturas'
+        category: 'pinturas'
     },
     {
         id: "05",
         name: "Vallejo White",
         price: 300,
-        image: imagenes.imagen5,
+        image: images.imagen5,
         stock: 5,
-        categoria: 'pinturas'
+        category: 'pinturas'
     },
     {
         id: "06",
         name: "Vallejo Metal",
         price: 300,
-        image: imagenes.imagen6,
+        image: images.imagen6,
         stock: 6,
-        categoria: 'pinturas'
+        category: 'pinturas'
     }
 
 ];
@@ -54,7 +54,7 @@ const productos = [{
 export const getFetch = (id) => {
     return new Promise((resolve) => {
         setTimeout(() => {
-            const query = id ? productos.find(products => products.id === id) : productos
+            const query = id ? products.find(products => products.id === id) : products
             resolve(query)
         }, 2000)
     })

@@ -1,4 +1,4 @@
-import { addDoc, collection, getFirestore, updateDoc } from "firebase/firestore";
+import {  getFirestore, updateDoc } from "firebase/firestore";
 import { Link } from "react-router-dom";
 import { UseCartContext } from "../context/CartContext";
 

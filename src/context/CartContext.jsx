@@ -64,14 +64,17 @@ export default function CartContextProv({children}) {
             const price = cartItem.price * cartItem.quantity
 
             return { id, name, price }
+
         })
-    const db = getFirestore();
-    const queryCollectionOrders = collection(db, 'orders');
-    addDoc(queryCollectionOrders, order)
-    .then(resp => setOrderId(resp.id))    
-    .catch(err => console.log(err))
-    .finally(() => clearCart())
-  
+        
+        const db = getFirestore();
+        const queryCollectionOrders = collection(db, 'orders');
+        addDoc(queryCollectionOrders, order)
+        .then(resp => setOrderId(resp.id.toString()))                        
+        .catch(err => console.log(err))
+        .finally(alert("Su numero de orden es: "+orderId ),clearCart())
+      
+    
     }
     return (
         <cartContext.Provider value={{

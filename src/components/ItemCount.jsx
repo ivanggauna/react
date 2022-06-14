@@ -1,6 +1,6 @@
 import React from 'react';
 import { useState } from 'react';
-import './estilos/itemCount.css'
+import './styles/itemCount.css'
 
 
 /* La funcion tiene que tener stock, initial,  onAdd  */

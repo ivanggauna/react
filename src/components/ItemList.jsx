@@ -1,8 +1,7 @@
 import React from 'react';
-import { useState, useEffect } from 'react';
-import './estilos/Itemlist.css';
-import { useParams } from 'react-router-dom';
-import { getFetch } from './helpers/getFetch';
+
+import './styles/Itemlist.css';
+
 import Item from './Item'
 import Loader from './Loader';
 
