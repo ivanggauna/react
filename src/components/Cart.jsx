@@ -6,12 +6,13 @@ import "./styles/Cart.css";
 export default function Cart() {
   const { cartList, clearCart, totalPrice, removeItem, orderId, createOrder } =
     UseCartContext();
-
+  const [id, setId] = useState();
   const [userData, setUserData] = useState({});
   const [nameError, setNameError] = useState(false);
   const [phoneError, setPhoneError] = useState(false);
   const [emailError, setEmailError] = useState(false);
   const [email2Error, setEmail2Error] = useState(false);
+ 
 
   const change = (data) => {
     setUserData({
@@ -20,24 +21,28 @@ export default function Cart() {
     });
   };
 
+
+
   const verification = () => {
     setNameError(!userData.name);
     setPhoneError(!userData.phone);
     setEmailError(!userData.emailError);
     setEmail2Error(!(userData.email2Error === userData.email));
+    setId(orderId)
     if (
       userData.name &&
       userData.phone &&
       userData.email &&
       userData.email2 === userData.email
-    ) {
-      createOrder(userData);
+    ) {     
+    createOrder(userData)
+    console.log(createOrder)     
     } else {
       alert("Revise que los campos esten completos correctamente");
     }
   };
 
-  if (totalPrice() === 0) {
+  if (totalPrice === 0) {
     return (
       <div className="cart">
         <h1>El pedido está vacío</h1>
@@ -54,11 +59,11 @@ export default function Cart() {
       {cartList.map((product) => (
         <li key={product.id}>
           {product.name} -Precio: ${product.price} - Cantidad:{" "}
-          {product.quantity} - Nro de orden: {orderId}
+          {product.quantity} - Nro de orden: {id}
           <button onClick={() => removeItem(product.id)}> X </button>
         </li>
       ))}
-      <p>{`Costo total: $${totalPrice()}`}</p>
+      <p>{`Costo total: $${totalPrice}`}</p>
 
       <form action="">
         <input

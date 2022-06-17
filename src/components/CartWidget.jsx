@@ -1,22 +1,21 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { UseCartContext } from "../context/CartContext";
-import images from "../images/images";
 
+import './styles/CartWidget.css'
 
-const CartWidget = () => {
-  const { totalItems } = UseCartContext();
+export default function CartWidget() {
+
 
   return (
-    <div className="cartWidget1">
-      <Link to="/cart">
-        <div className="cartWidget2">
-          <span className="cartWidget__counter">{totalItems}</span>
-        </div>
-        <img src={images.iconocarrito} alt="" className="carrito" />
-      </Link>
-    </div>
+    <Link to="/cart">
+      <div className="cartWidget">
+        <img
+          src="https://firebasestorage.googleapis.com/v0/b/tiendagundam-3f910.appspot.com/o/iconocarrito.png?alt=media&token=8dd2699c-fdc1-4ce1-b083-e15abc220edd"
+          alt=""
+          className="carrito"
+        />
+        <span className="cartWidget__counter"></span>
+      </div>
+    </Link>
   );
-};
-
-export default CartWidget;
+}
