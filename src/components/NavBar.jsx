@@ -11,15 +11,15 @@ function NavBar() {
 
   return (
     <header className="header">
-      <div className="contenedor-logo">
+      <div className="container-logo">
         <Link to="/">
           {" "}
-          <img src={logo} alt="marca" />
+          <img src={logo} alt="logo" />
         </Link>
       </div>
 
       <nav>
-        <ul className="contenedor-nav">
+        <ul className="container-nav">
           <li>
             <Link to="/">Inicio</Link>
           </li>
@@ -27,10 +27,10 @@ function NavBar() {
             <Link to="/">Productos</Link>
           </li>
           <li>
-            <Link to="/categoria/pinturas">Pinturas</Link>
+            <Link to="/categoria/Pinturas">Pinturas</Link>
           </li>
           <li>
-            <Link to="/categoria/maquetas">Maquetas</Link>
+            <Link to="/categoria/Maquetas">Maquetas</Link>
           </li>
         </ul>
       </nav>

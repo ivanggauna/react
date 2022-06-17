@@ -7,7 +7,7 @@ const products = [
     price: 300,
     image: images.imagen3,
     stock: 2,
-    category: "maquetas",
+    category: "Maquetas",
   },
   {
     id: "02",
@@ -15,7 +15,7 @@ const products = [
     price: 350,
     image: images.imagen1,
     stock: 4,
-    category: "maquetas",
+    category: "Maquetas",
   },
   {
     id: "03",
@@ -23,7 +23,7 @@ const products = [
     price: 400,
     image: images.imagen2,
     stock: 5,
-    category: "maquetas",
+    category: "Maquetas",
   },
   {
     id: "04",
@@ -31,7 +31,7 @@ const products = [
     price: 300,
     image: images.imagen4,
     stock: 3,
-    category: "pinturas",
+    category: "Pinturas",
   },
   {
     id: "05",
@@ -39,7 +39,7 @@ const products = [
     price: 300,
     image: images.imagen5,
     stock: 5,
-    category: "pinturas",
+    category: "Pinturas",
   },
   {
     id: "06",
@@ -47,7 +47,7 @@ const products = [
     price: 300,
     image: images.imagen6,
     stock: 6,
-    category: "pinturas",
+    category: "Pinturas",
   },
 ];
 
@@ -58,6 +58,6 @@ export const getFetch = (id) => {
         ? products.find((products) => products.id === id)
         : products;
       resolve(query);
-    }, 2000);
+    }, 1000);
   });
 };

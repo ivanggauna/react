@@ -1,4 +1,5 @@
 import gifLoader from "../images/loader.gif";
+import "./styles/Loader.css";
 
 export default function Loader() {
   return (

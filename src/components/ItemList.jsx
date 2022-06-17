@@ -5,14 +5,14 @@ import Loader from "./Loader";
 
 const itemList = ({ items }) => {
   return (
-    <section className="">
+    <section className="background-section">
       <div className="">
         <div className="product-list-container">
           {items.length ? (
             <>
               {items.map((products) => {
                 return (
-                  <div key={products.id}>
+                  <div key={products.id} className="card">
                     <Item
                       name={products.name}
                       image={products.image}

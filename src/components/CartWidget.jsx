@@ -1,21 +1,19 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { UseCartContext } from "../context/CartContext";
-import "./styles/CartWidget.css";
+import images from "../images/images";
+
 
 const CartWidget = () => {
   const { totalItems } = UseCartContext();
 
   return (
-    <div className="cartWidget">
+    <div className="cartWidget1">
       <Link to="/cart">
-        <div
-          className="cartWidget"
-          style={{ opacity: !totalItems ? "0.5" : "1" }}
-        >
+        <div className="cartWidget2">
           <span className="cartWidget__counter">{totalItems}</span>
         </div>
-        <img src="../src/iconocarrito.png" alt="" className="carrito" />
+        <img src={images.iconocarrito} alt="" className="carrito" />
       </Link>
     </div>
   );

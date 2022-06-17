@@ -9,9 +9,9 @@ const Item = (item) => {
         <img className="product-card_image" src={item.image} alt="" />
       </Link>
 
-      <h3 className="product-card_nombre">{item.name}</h3>
+      <h3 className="product-card_name">{item.name}</h3>
 
-      <span className="product-card_precio">$ {item.price}</span>
+      <span className="product-card_price">$ {item.price}</span>
     </article>
   );
 };

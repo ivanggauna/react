@@ -1,0 +1,32 @@
+.cart {
+  background-color: rosybrown;
+  padding-left: 10px;
+  min-height: 81.5vh;
+}
+
+li {
+  font-size: 1.2rem;
+}
+
+.cartForm {
+  text-align: center;
+}
+h1 {
+  font-size: 3rem;
+  margin-top: auto;
+}
+p {
+  font-size: 2rem;
+}
+
+form,
+input,
+textarea {
+  font-size: 1.2rem;
+  margin: 3px;
+}
+
+.buttons {
+  font-size: 1.2rem;
+  margin: 5px;
+}

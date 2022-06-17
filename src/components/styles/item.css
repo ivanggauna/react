@@ -1,28 +1,15 @@
-.product-card{
-    display: flex;
-    flex-direction: column;   
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 1em;
-    height: auto;
-    
-    
+.product-card_image {
+  margin-top: 1em;
+  border: 1px solid black;
+  border-radius: 10px;
 }
 
-.product-card_image{
-    width: auto;
-    height: auto;
-    margin-top: 1em;
-    border: 1px solid black;
-    border-radius: 10px;
+.product-card_name {
+  font-size: 1.6rem;
+  text-decoration: underline;
 }
 
-.product-card_nombre{
-    font-size: 1.6rem;
-    text-decoration: underline;
-}
-
-.product-card_precio{
-    font-size: 1.4rem;
-    margin-bottom: 1em;
+.product-card_price {
+  font-size: 1.4rem;
+  margin-bottom: 1em;
 }

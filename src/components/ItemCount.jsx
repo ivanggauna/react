@@ -5,15 +5,15 @@ import "./styles/itemCount.css";
 /* La funcion tiene que tener stock, initial,  onAdd  */
 const ItemCount = ({ initial, stock, onAdd, product, handleInputType }) => {
   /* Hook */
-  const [cantidad, setCantidad] = useState(initial);
+  const [quantity, setQuantity] = useState(initial);
 
   /* Funcion que usa el hook y recibe valor por parametro */
-  const añadirProducto = (valor) => {
-    setCantidad(cantidad + valor);
+  const addProduct = (value) => {
+    setQuantity(quantity + value);
   };
 
   function addToCart() {
-    onAdd(cantidad, product.name);
+    onAdd(quantity, product.name);
     handleInputType();
   }
 
@@ -21,25 +21,25 @@ const ItemCount = ({ initial, stock, onAdd, product, handleInputType }) => {
     <div className="itemCountContainer">
       <div className="itemCountContainer__general">
         <button
-          className="itemCountContainer__boton"
-          onClick={() => añadirProducto(-1)}
-          disabled={cantidad === initial ? true : false}
+          className="itemCountContainer__button"
+          onClick={() => addProduct(-1)}
+          disabled={quantity === initial ? true : false}
         >
           -
         </button>
-        <span className="itemCountContainer__cantidad">{cantidad}</span>
+        <span className="itemCountContainer__quantity">{quantity}</span>
         <button
-          className="itemCountContainer__boton"
-          onClick={() => añadirProducto(+1)}
-          disabled={cantidad === stock ? true : false}
+          className="itemCountContainer__button"
+          onClick={() => addProduct(+1)}
+          disabled={quantity === stock ? true : false}
         >
           +
         </button>
       </div>
 
       <button
-        className="botonAñadir"
-        onClick={() => addToCart(cantidad)}
+        className="addButton"
+        onClick={() => addToCart(quantity)}
         disabled={stock === 0 ? true : false}
       >
         Añadir

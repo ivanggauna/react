@@ -1,24 +1,15 @@
 import { createContext, useContext, useState } from "react";
 import { addDoc, collection, getFirestore } from "firebase/firestore";
 
-
 const cartContext = createContext([]);
 
 export function UseCartContext() {
   return useContext(cartContext);
 }
 
-
-
 export default function CartContextProv({ children }) {
   const [cartList, setCartList] = useState([]);
-  const [orderId, setOrderId] = useState();
-
-
-
-  
-
-
+  const [orderId, setOrderId] = useState("");
 
   function isInCart(id) {
     return cartList.some((el) => el.id === id);
@@ -59,9 +50,9 @@ export default function CartContextProv({ children }) {
     updateCart(newCartList);
   }
 
-  function createOrder() {
+  function createOrder(userData) {
     let order = {};
-    order.buyer = { name: "Ivan", email: "ig@hotmail.com", phone: "01122233" };
+    order.userData = userData;
     order.total = totalPrice();
 
     order.items = cartList.map((cartItem) => {
@@ -75,9 +66,12 @@ export default function CartContextProv({ children }) {
     const db = getFirestore();
     const queryCollectionOrders = collection(db, "orders");
     addDoc(queryCollectionOrders, order)
-      .then((resp) =>setOrderId(resp.id.toString()))
+      .then((resp) => setOrderId(resp.id))
       .catch((err) => console.log(err))
-      .finally(()=>alert(orderId),()=>clearCart());
+      .finally(
+        () => alert(`Sr/Sra ${userData.name} su nro de orden es: ${orderId}`),
+        clearCart()
+      );
   }
   return (
     <cartContext.Provider
@@ -91,7 +85,6 @@ export default function CartContextProv({ children }) {
         clearItem,
         orderId,
         createOrder,
-        
       }}
     >
       {children}

@@ -1,53 +1,47 @@
 .header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px;
-    background-image: url('https://images4.alphacoders.com/660/66086.jpg');
-    background-position: center;
-    background-size: cover;
-  }
-  
-  .contenedor-logo {
-    padding-top: 5px;
-    
-  }
-  .contenedor-logo img {
-    width: auto;
-    
-  }
-  
-  .contenedor-nav {
-    display: flex;   
-   
-    
-  }
-  
-  .contenedor-nav li {
-    margin: 0px 10px 10px;
-    list-style: none;
-  }
-  
-  .contenedor-nav li a {
-    text-decoration: none;
-    color: white;
-    font-weight: 500;
-    font-size: 25px;
-  }
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background-image: url("https://images4.alphacoders.com/660/66086.jpg");
+  background-position: center;
+  background-size: cover;
+}
 
-  .contenedor-nav li a:hover{
-      text-decoration: underline;
-  }
+.container-logo {
+  padding-top: 5px;
+}
+.container-logo img {
+  width: auto;
+}
 
-  .carrito{
-    width: 10%;
-    padding: auto;
-    
-  }
+.container-nav {
+  display: flex;
+}
 
-  .cartText{
-    color: white;
-    font-size: 2em;
-    text-align: start;
-    
-  }
+.container-nav li {
+  margin: 0px 10px 10px;
+  list-style: none;
+}
+
+.container-nav li a {
+  text-decoration: none;
+  color: white;
+  font-weight: 500;
+  font-size: 25px;
+}
+
+.container-nav li a:hover {
+  text-decoration: underline;
+}
+
+.carrito {
+  width: 10%;
+  padding: auto;
+}
+
+.cartText {
+  color: white;
+  font-size: 2em;
+  text-align: start;
+}
