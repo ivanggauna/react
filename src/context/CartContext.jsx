@@ -1,7 +1,6 @@
 import { createContext, useContext, useState } from "react";
 import { addDoc, collection, getFirestore } from "firebase/firestore";
-import swal from 'sweetalert';
-
+import swal from "sweetalert";
 
 const cartContext = createContext([]);
 
@@ -11,13 +10,13 @@ export function UseCartContext() {
 
 export default function CartContextProv({ children }) {
   const [cartList, setCartList] = useState([]);
-  const [orderId, setOrderId] = useState('');
-  const [totalItems,setTotalItems] = useState()
+  const [orderId, setOrderId] = useState("");
+  const [totalItems, setTotalItems] = useState();
   const [qtyInCart, setQtyInCart] = useState(0);
   const [totalPrice, setTotalPrice] = useState(0);
 
   function isInCart(item) {
-    return cartList.some((el) => el.id ===item.id);
+    return cartList.some((el) => el.id === item.id);
   }
   function addToCart(item) {
     if (isInCart(item)) {
@@ -31,17 +30,15 @@ export default function CartContextProv({ children }) {
   }
   function updateCart(arr) {
     setCartList(arr);
-    setTotalPrice(arr
-        .map(curr => curr.quantity*curr.price)
-        .reduce((acc,curr) => acc+curr,0)
+    setTotalPrice(
+      arr
+        .map((curr) => curr.quantity * curr.price)
+        .reduce((acc, curr) => acc + curr, 0)
     );
-    setTotalItems(arr
-        .map(curr => curr.quantity)
-        .reduce((acc,curr) => acc+curr,0)
+    setTotalItems(
+      arr.map((curr) => curr.quantity).reduce((acc, curr) => acc + curr, 0)
     );
-}
-
-
+  }
 
   const removeItem = (id) => {
     setCartList(cartList.filter((prod) => prod.id !== id));
@@ -51,21 +48,19 @@ export default function CartContextProv({ children }) {
     return cartList.reduce((count, prod) => (count += prod.quantity), 0);
   };
 
-
-
   function clearCart(sent) {
-    if(sent !== 'sent') setOrderId('');
+    if (sent !== "sent") setOrderId("");
     updateCart([]);
   }
 
   function checkQtyInCart(item) {
     if (isInCart(item)) {
-        let i = cartList.findIndex(el => el.id === item.id);
-        setQtyInCart(cartList[i].quantity);
+      let i = cartList.findIndex((el) => el.id === item.id);
+      setQtyInCart(cartList[i].quantity);
     } else {
-        setQtyInCart(0);
+      setQtyInCart(0);
     }
-}
+  }
 
   function clearItem(id) {
     let i = cartList.findIndex((el) => el.id === id);
@@ -85,25 +80,22 @@ export default function CartContextProv({ children }) {
       const price = cartItem.price * cartItem.quantity;
 
       return { id, name, price };
-      
     });
 
     const db = getFirestore();
     const queryCollectionOrders = collection(db, "orders");
     addDoc(queryCollectionOrders, order)
-      .then((resp) => /* setOrderId(resp.id) */ swal({
-        title: "Gracias por su compra " + userData.name + "!",
-        text: "Su código de compra es " + resp.id,
-        icon: "success",
-      })
-    )
+      .then((resp) =>
+        swal({
+          title: `Gracias por su compra ${userData.name}`,
+          text: `Su numero de orden es: ${resp.id}`,
+          icon: "success",
+        })
+      )
       .catch((err) => console.log(err))
-      .finally(
-      /*   () => alert(`Sr/Sra ${userData.name} su nro de orden es: ${orderId}`), */
-        clearCart()
-      );
+      .finally(clearCart());
   }
-    
+
   return (
     <cartContext.Provider
       value={{
@@ -118,7 +110,7 @@ export default function CartContextProv({ children }) {
         clearItem,
         orderId,
         createOrder,
-        checkQtyInCart
+        checkQtyInCart,
       }}
     >
       {children}
