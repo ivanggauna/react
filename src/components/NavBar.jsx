@@ -7,7 +7,7 @@ import { UseCartContext } from "../context/CartContext";
 function NavBar() {
   const { totalQuantity } = UseCartContext();
 
-  const logo = "../src/logoNew.webp";
+  const logo = "https://firebasestorage.googleapis.com/v0/b/tiendagundam-3f910.appspot.com/o/logoNew.webp?alt=media&token=41768f7a-f4cc-4107-a627-305533f16b58"
 
   return (
     <header className="header">
