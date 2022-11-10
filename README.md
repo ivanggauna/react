@@ -10,7 +10,7 @@ Las librerias utilizadas fueron -React Router Dom, para la navegacion y -Firebas
 
 ### Deploy
 
-El sitio fue subido a netlify. El link => https://tiendagundamar.netlify.app/
+El sitio fue subido a netlify. El link => https://tiendagundamreact.netlify.app/
 
 
 Disclaimer a tener en cuenta: Para que la orden de compra sea mostrada en la alerta se debe generar primero una orden cualquiera y luego sin recargar la pagina generar la otra, es algo a lo que no le encontre solucion.
